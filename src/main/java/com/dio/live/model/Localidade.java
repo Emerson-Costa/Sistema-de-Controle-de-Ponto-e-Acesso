@@ -2,8 +2,7 @@ package com.dio.live.model;
 
 import lombok.*;
 
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -11,10 +10,12 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Localidade {
+    @Id
     private long id;
     // Notaçãoi da relação de: 1 X 1
-    @OneToMany
+    @ManyToOne
     private NivelAcesso nivelAcesso;
     private String descricao;
 }
